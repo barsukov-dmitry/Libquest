@@ -66,7 +66,9 @@ body {
     margin-top: 10px;
     margin-bottom: 10px;
 }
-
+.content div a{
+    color: #634229;
+}
 .footer {
 	 grid-column-start: 1; 
      grid-column-end: 13; 
@@ -136,13 +138,11 @@ input {
   color: #8B4513;
   font-weight: 700;
   text-shadow: none;
-  -webkit-transition: color 0.3s;
-  -moz-transition: color 0.3s;
   transition: color 0.3s;
 }
 
 .cl-effect-21 a:hover, .cl-effect-21 a:focus {
-	color: lightblue;
+    color: black;
 }
 
 .books_img{

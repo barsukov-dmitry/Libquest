@@ -1,19 +1,5 @@
 ﻿<?php
-	 $dbname = "library";
-	 $login = "root";
-	 $password = "root";
-	 try
-	 {
-	 	$pdo = new PDO("mysql:host=LocalHost; dbname=$dbname",$login,$password);
-	 	$pdo->SetAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	 }
-	 catch(PDOException $e)
-	 {
-	 	echo "Ошибка подключения БД";
-	 	echo $e->getMessage();
-	 	exit();
-	 }
-
+    include $_SERVER['DOCUMENT_ROOT'].'/includes/dbconnect.php';
 	$d_year = $_GET['ryear'];//obrabotka vvoda
 	$d_month = $_GET['rmonth'];
 	$sql = "SELECT pubhouse.* from pubhouse left join (select * from delivery 

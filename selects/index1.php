@@ -1,19 +1,5 @@
 ﻿<?php
-	 $dbname = "library";
-	 $login = "root";
-	 $password = "root";
-	 try
-	 {
-	 	$pdo = new PDO("mysql:host=LocalHost; dbname=$dbname",$login,$password);
-	 	$pdo->SetAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	 }
-	 catch(PDOException $e)
-	 {
-	 	echo "Ошибка подключения БД";
-	 	echo $e->getMessage();
-	 	exit();
-	 }
-
+    include $_SERVER['DOCUMENT_ROOT'].'/includes/dbconnect.php';
 	$d_year = $_GET['ryear'];
 	$d_month = $_GET['rmonth'];
 	$sql = "select Book_id, Copy_price, Copies_number from list join delivery using(Del_id) join book using(Book_id) where year(Del_date)='$d_year' and month(Del_date)='$d_month' group by(Book_id);";
