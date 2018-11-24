@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿<?php
+    include "includes/u_dbconnect.php";
+?>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset ="utf-8">

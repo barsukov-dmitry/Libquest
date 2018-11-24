@@ -1,5 +1,5 @@
 ﻿<?php
-    include $_SERVER['DOCUMENT_ROOT'].'/includes/dbconnect.php';
+    include $_SERVER['DOCUMENT_ROOT'].'/includes/u_dbconnect.php';
 	$d_year = $_GET['ryear'];
 	$d_month = $_GET['rmonth'];
 	$sql = "select Book_id, Copy_price, Copies_number from list join delivery using(Del_id) join book using(Book_id) where year(Del_date)='$d_year' and month(Del_date)='$d_month' group by(Book_id);";

@@ -1,5 +1,5 @@
 ﻿<?php
-    include $_SERVER['DOCUMENT_ROOT'].'/includes/dbconnect.php';
+    include $_SERVER['DOCUMENT_ROOT'].'/includes/u_dbconnect.php';
 	$d_year = $_GET['ryear'];
 	$d_month = $_GET['rmonth'];
 	$sql = "select Pub_id, Pub_name, SUM(Del_cost) from delivery join pubhouse using(Pub_id) where year(Del_date)=$d_year and month(Del_date)=$d_month group by (Pub_id);";

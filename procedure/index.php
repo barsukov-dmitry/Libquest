@@ -1,5 +1,5 @@
 ﻿<?php
-    include $_SERVER['DOCUMENT_ROOT'].'/includes/dbconnect.php';
+    include $_SERVER['DOCUMENT_ROOT'].'/includes/u_dbconnect.php';
 	$Del_num = $_GET['Del_id'];                     //transfer argument from html
 
 	$sql = "SELECT Updating from delivery where Del_id = '$Del_num';";

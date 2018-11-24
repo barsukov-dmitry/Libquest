@@ -1,7 +1,8 @@
 <?php
+    session_start();
     $dbname = "library";
-    $login = "virt";
-    $password = "virt";
+    $login = $_SESSION['db_login'];
+    $password = $_SESSION['db_password'];
     try
     {
         $pdo = new PDO("mysql:host=LocalHost; dbname=$dbname",$login,$password);

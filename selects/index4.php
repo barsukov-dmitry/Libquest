@@ -1,5 +1,5 @@
 ﻿<?php
-    include $_SERVER['DOCUMENT_ROOT'].'/includes/dbconnect.php';
+    include $_SERVER['DOCUMENT_ROOT'].'/includes/u_dbconnect.php';
 	$d_year = $_GET['ryear'];//obrabotka vvoda
 	$sql = "select pubhouse.* from delivery join pubhouse using(Pub_id) where month(Del_date) < 7 and year(Del_date)=$d_year and Del_cost = (select MAX(Del_cost) from delivery where month(Del_date) < 7 and year(Del_date) =$d_year);";
 	

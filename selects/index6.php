@@ -1,5 +1,5 @@
 ﻿<?php
-    include $_SERVER['DOCUMENT_ROOT'].'/includes/dbconnect.php';
+    include $_SERVER['DOCUMENT_ROOT'].'/includes/u_dbconnect.php';
 	$d_year = $_GET['ryear'];//obrabotka vvoda
 	$d_month = $_GET['rmonth'];
 	$sql = "SELECT pubhouse.* from pubhouse left join (select * from delivery 

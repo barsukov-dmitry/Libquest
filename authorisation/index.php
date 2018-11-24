@@ -1,25 +1,20 @@
 <?php
-echo "Hello from login controller";
+include "input_form.html";
+include '../includes/dbconnect.php';
+session_start();
+if($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $login = $_POST['login'];
+    $password = $_POST['password'];
+    $sql = "SELECT G_id FROM users WHERE login='$login' AND password = '$password';";
+    $result = $pdo->query($sql);
+    $g_id = $result->fetch();
+    $group_id = $g_id['G_id'];
+
+    $sql = "SELECT login, password FROM groups WHERE G_id = '$group_id';";
+    $result = $pdo->query($sql);
+    $group = $result->fetch();
+    $_SESSION['db_login'] = $group['login'];
+    $_SESSION['db_password'] = $group['password'];
+    header("location:../index.php");
+}
 ?>
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link href="../css/book.css" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: url(../img/login.png);
-            background-size: 100%;
-            font-family: 'Noto Serif', serif;
-            font-size: 16px;
-            text-align: center;
-        }
-    </style>
-    <title>Lib Auth</title>
-</head>
-<body>
-</body>
-</html>
