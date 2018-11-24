@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Форма ввода</title>
+	<link rel="stylesheet" href="../css/book.css">
+	<link rel="shortcut icon" type="image/png" href="../img/badger2.png">
+</head>
+<body ><br> <br><br> <br><br>
+	<h3>Введите год и месяц поставки книг</h3>
+	<div class = "form">
+		<form method = GET action = "index1.php">
+			<table border = "2">
+				<tr>
+					<td >
+						Год
+					</td>
+					<td >
+						<input type = text name = ryear required pattern="^20[0-1][0-8]$">
+					</td>
+				</tr>
+				<tr>
+					<td >
+						Месяц
+					</td>
+					<td >
+						<input type = text name=rmonth required pattern="^[1-9]|1[0-2]$">
+					</td>
+				</tr>
+				<tr>
+					<td >
+						<input type = reset value =Очистить>
+					</td>
+					<td >
+						<input type = submit value =Отправить>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+      <br><br>
+      <div>Подсказка: для поля <strong>Год</strong> используйте числа от <strong>2000 до 2018</strong>, <br>для поля <strong>Месяц</strong> от <strong>1 до 12</strong>* </div>
+		<img src="../img/pero.gif" alt="Перо" style="vertical-align:middle">
+</body>
+</html>

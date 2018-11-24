@@ -3,26 +3,27 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Форма ввода</title>
-	<link rel="stylesheet" href="forma.css">
+	<link rel="stylesheet" href="../css/book.css">
+	<link rel="shortcut icon" type="image/png" href="../img/badger2.png">
 </head>
-<body align = center><br> <br><br> <br><br>
+<body ><br> <br><br> <br><br>
 	<h3>Введите ID партии для обновления количества<br>
 	и стоимости книг с одинаковым ID</h3>
-	<form method = GET action = "http://localhost/dimlib/procedure.php">
-		<table border = "2" bordercolor = brown align = center>
+	<form method = GET action = "procedure.php">
+		<table border = "2"  >
 	      	<tr>
-	      		<td align = center>
+	      		<td >
 					ID партии
 	      		</td>
-	      		<td align = center>
+	      		<td >
 					<input type = text name=Del_id required pattern="^[0-9]+$">
 	      		</td>
 	      	</tr>
 	      	<tr>
-	      		<td align = center>
+	      		<td >
 					<input type = reset value =Очистить>
 	      		</td>
-	      		<td align = center>
+	      		<td >
 					<input type = submit value =Отправить>
 	      		</td>
 	      	</tr>
@@ -30,6 +31,6 @@
 	  </form>
       <br><br>
       <div>Подсказка: для ввода используйте натуральные числа* </div>
-	   <img src="pero.gif" alt="Перо" style="vertical-align:middle"> 
+	   <img src="../img/pero.gif" alt="Перо" style="vertical-align:middle">
 </body>
 </html>

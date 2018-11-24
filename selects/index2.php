@@ -1,7 +1,7 @@
 ﻿<?php
 	 $dbname = "library";
 	 $login = "root";
-	 $password = "";
+	 $password = "root";
 	 try
 	 {
 	 	$pdo = new PDO("mysql:host=LocalHost; dbname=$dbname",$login,$password);
@@ -23,52 +23,45 @@
 ?>
 <html>
 	<head>
-		<title>Report</title>
-		<link rel="stylesheet" href="forma.css">
+		<title>Отчет 2</title>
+        <link rel="stylesheet" href="../css/book.css">
+        <link rel="shortcut icon" type="image/png" href="../img/badger2.png">
 	</head>
 	<body><br><br>
 		<?php if ($flag == 0): ?>
-			<div align = center>Нет данных, соответствующих данному запросу,<br>
+			<div >Нет данных, соответствующих данному запросу,<br>
 			с выбранными значениями года и месяца.</div>
 		<br><br>
 		<?php else: ?>
-		<table border = "2" bordercolor = brown align = center><tbody>
-			<th colspan="3" align = center>Отчет о поставках</th>
+		<table border = "2"  ><tbody>
+			<th colspan="3" >Отчет о поставках</th>
 			<tr>
-				<td align = center> Pub_id</td>
-				<td align = center> Pub_name</td>
-				<td align = center> Sum_Del_cost)</td>
+				<td > Pub_id</td>
+				<td > Pub_name</td>
+				<td > Sum_Del_cost)</td>
 			</tr>
 			<?php foreach ($deliveries as $delivery):?>
 				<tr>
-					<td align = center> <?php echo $delivery['Pub_id']; ?> </td>
-					<td align = center> <?php echo $delivery['Pub_name']; ?> </td>
-					<td align = center> <?php echo $delivery['SUM(Del_cost)']; ?> </td>
+					<td > <?php echo $delivery['Pub_id']; ?> </td>
+					<td > <?php echo $delivery['Pub_name']; ?> </td>
+					<td > <?php echo $delivery['SUM(Del_cost)']; ?> </td>
 				</tr>
 			</tbody>
 		<?php endforeach; ?>
 		</table><br>
 		<?php endif; ?>
-		<style>
-   .b1 {
-    background: white; /* Синий цвет фона */ 
-    color: brown; /* Белые буквы */ /* Размер шрифта в пунктах */
-    border-radius:  10px;
-    border: 2px solid brown;
-   		}
-  	</style>
 	<?php if ($flag == 0): ?>
-  	<form action ="select2_input_form.html" align = center >
+  	<form action ="input_form2.html"  >
    		<button  class="b1">
-    		<img src="bookk.png" alt="Перо" style="vertical-align:middle" align = left> 
+    		<img src="../img/bookk.png" alt="Перо" style="vertical-align:middle" align = left>
 				<H3>Ввести другие значения</H3>
    		</button></p>
   	</form>
   	  <?php endif; ?>
 	  <br>
-      <form action ="index.php" align = center >
+      <form action ="../index.php"  >
    		<button  class="b1">
-    		<img src="bookk.png" alt="Перо" style="vertical-align:middle" align = left> 
+    		<img src="../img/bookk.png" alt="Перо" style="vertical-align:middle" align = left>
 				<H3>Вернуться  к  меню  библиотеки</H3>
    		</button></p>
   	</form>  

@@ -1,7 +1,7 @@
 ﻿<?php
 	 $dbname = "library";
 	 $login = "root";
-	 $password = "";
+	 $password = "root";
 	 echo "<br>";
 	 try
 	 {
@@ -57,25 +57,25 @@
 <html>
 	<head>
 		<title>Процедура обновления</title>
-		<link rel="stylesheet" href="forma.css">	
+		<link rel="stylesheet" href="../css/book.css"> 	<link rel="shortcut icon" type="image/png" href="../img/badger2.png">
 	</head>
 	<body><br>
 		<?php if ($flag1 != 0): ?>
 		<?php if ($flag == 0): ?>
-		<table border = "2" bordercolor = brown align = center><tbody>
-			<th colspan="4" align = center>_Строки таблицы "Хранилище книг" до обновления_</th>
+		<table border = "2"  ><tbody>
+			<th colspan="4" >_Строки таблицы "Хранилище книг" до обновления_</th>
 			<tr>
-				<td align = center> Rec_id</td>
-				<td align = center> Same_id_cost</td>
-				<td align = center> Same_id_number</td>
-				<td align = center> Books_id</td>
+				<td > Rec_id</td>
+				<td > Same_id_cost</td>
+				<td > Same_id_number</td>
+				<td > Books_id</td>
 			</tr>
 			<?php foreach ($old_strings as $old_str):?>
 				<tr>
-					<td align = center> <?php echo $old_str['Rec_id']; ?> </td>
-					<td align = center> <?php echo $old_str['Same_id_cost']; ?> </td>
-					<td align = center> <?php echo $old_str['Same_id_number']; ?> </td>
-					<td align = center> <?php echo $old_str['Books_id']; ?> </td>
+					<td > <?php echo $old_str['Rec_id']; ?> </td>
+					<td > <?php echo $old_str['Same_id_cost']; ?> </td>
+					<td > <?php echo $old_str['Same_id_number']; ?> </td>
+					<td > <?php echo $old_str['Books_id']; ?> </td>
 				</tr>
 			</tbody>
 		<?php endforeach; ?>
@@ -83,20 +83,20 @@
 		<?php endif; ?>
 
 		<br><br>
-		<table border = "2" bordercolor = brown align = center><tbody>
-			<th colspan="4" align = center>Строки таблицы "Хранилище книг" после обновления</th>
+		<table border = "2"  ><tbody>
+			<th colspan="4" >Строки таблицы "Хранилище книг" после обновления</th>
 			<tr>
-				<td align = center> Rec_id</td>
-				<td align = center> Same_id_cost</td>
-				<td align = center> Same_id_number</td>
-				<td align = center> Books_id</td>
+				<td > Rec_id</td>
+				<td > Same_id_cost</td>
+				<td > Same_id_number</td>
+				<td > Books_id</td>
 			</tr>
 			<?php foreach ($updating_strings as $updating_str):?>
 				<tr>
-					<td align = center> <?php echo $updating_str['Rec_id']; ?> </td>
-					<td align = center> <?php echo $updating_str['Same_id_cost']; ?> </td>
-					<td align = center> <?php echo $updating_str['Same_id_number']; ?> </td>
-					<td align = center> <?php echo $updating_str['Books_id']; ?> </td>
+					<td > <?php echo $updating_str['Rec_id']; ?> </td>
+					<td > <?php echo $updating_str['Same_id_cost']; ?> </td>
+					<td > <?php echo $updating_str['Same_id_number']; ?> </td>
+					<td > <?php echo $updating_str['Books_id']; ?> </td>
 				</tr>
 			</tbody>
 		<?php endforeach; ?>
@@ -110,16 +110,16 @@
     border: 2px solid brown;
    		}
   	</style>
-  	<form action ="procedure_input_form.html" align = center >
+  	<form action ="input_form.html"  >
    		<button  class="b1">
-    		<img src="bookk.png" alt="Перо" style="vertical-align:middle" align = left> 
+    		<img src="../img/bookk.png" alt="Перо" style="vertical-align:middle" align = left>
 				<H3>Ввести другое значение</H3>
    		</button></p>
   	</form>
 	  <br>
-      <form action ="index.php" align = center >
+      <form action ="../index.php"  >
    		<button  class="b1">
-    		<img src="bookk.png" alt="Перо" style="vertical-align:middle" align = left> 
+    		<img src="../img/bookk.png" alt="Перо" style="vertical-align:middle" align = left>
 				<H3>Вернуться  к  меню  библиотеки</H3>
    		</button></p>
   	</form>  
