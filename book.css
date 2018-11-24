@@ -1,0 +1,151 @@
+body {
+	margin: 0;
+	padding: 0;
+	background: url(img/BG.jpg) no-repeat;
+	background-size: 100%;
+	font-family: 'Noto Serif', serif;
+    font-size: 16px;
+}
+.grid {
+	display: grid;
+	grid-template-columns: repeat(12,1fr);
+	grid-template-rows: 1fr repeat(8, 2fr) 1fr;
+	height: 100vh;
+	grid-gap: 10px;
+}
+
+.grid div {
+	border: 1px solid grey;
+}
+
+.header {
+	margin: 0;
+	padding: 0;
+	background-color: brown;
+    grid-column-start: 1; 
+    grid-column-end: 13; 
+    grid-row-start: 1; 
+    grid-row-end: 2;
+	min-height: 30px;
+	text-align: left;
+	font-size: 20px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.menu_header {
+	font-size: 18px;
+	text-align: center;
+}
+.menu {
+	margin-left: 10px;
+	background-color: white;
+    grid-column-start: 1; 
+    grid-column-end: 4; 
+    grid-row-start: 2; 
+    grid-row-end: 6;
+	min-height: 300px;
+	text-align: center;
+	font-size: 20px;
+	opacity: 0.7;
+	max-width: 300px;
+}
+.content {
+	background-color: white;
+    grid-column-start: 4; 
+    grid-column-end: 11; 
+    grid-row-start: 2; 
+    grid-row-end: 8;
+	min-height: 500px;
+    opacity: 0.7;
+}
+
+.footer {
+	 background-color: brown;
+	 grid-column-start: 1; 
+     grid-column-end: 13; 
+     grid-row-start: 10; 
+     grid-row-end: 11;
+     width: 100%;
+     bottom: 0;
+	 min-height: 40px;
+	 text-align: center;
+	 font-size: 20px;
+}
+
+h3 {
+  text-align: center;
+  color: #8B4513;
+}
+
+div a{
+	text-decoration: none;
+}
+ div {
+    list-style-type: none; 
+}
+.grid div.cl-effect-21{
+	background-color: white;
+	display: grid;
+
+	
+}
+
+.grid div.cl-effect-21 .content_header{
+	grid-column-start: 1;
+	grid-column-end: 5;
+    grid-row-start: 1;
+	grid-row-end:2;
+}
+
+.grid div.cl-effect-21 .main_item1{
+	grid-column-start: 1;
+	grid-column-end: 3;
+    grid-row-start: 2;
+	grid-row-end: 3;
+}
+
+.grid div.cl-effect-21 .main_item{
+	grid-column-start: 1;
+	grid-column-end: 5;
+    grid-row-start: 5;
+	grid-row-end: 6;
+}
+
+
+.cl-effect-21 a {
+  padding: 0px;
+  color: #8B4513;
+  font-weight: 700;
+  text-shadow: none;
+  -webkit-transition: color 0.3s;
+  -moz-transition: color 0.3s;
+  transition: color 0.3s;
+}
+
+.cl-effect-21 a::before {
+  top: 0;
+  -webkit-transform: translateY(-10px);
+  -moz-transform: translateY(-10px);
+  transform: translateY(-10px);
+}
+
+.cl-effect-21 a::after {
+  bottom: 0;
+  -webkit-transform: translateY(10px);
+  -moz-transform: translateY(10px);
+  transform: translateY(10px);
+}
+
+.cl-effect-21 a:hover,
+.cl-effect-21 a:focus {
+  color: lightblue;
+}
+
+
+.books_img{
+	position: absolute;
+	left:0px;
+	height: 120px;
+	width: 100%;
+	background-image: url(img/books2.jpg);
+}

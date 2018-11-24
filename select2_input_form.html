@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Форма ввода</title>
+	<link rel="stylesheet" href="forma.css">
+</head>
+<body align = center><br> <br><br> <br><br>
+	<h3>Введите год и месяц поставки книг</h3>
+	<form method = GET action = "http://localhost/dimlib/zapros2.php">
+		<table border = "2" bordercolor = brown align = center>
+	      	<tr>
+	      		<td align = center>
+					Год
+	      		</td>
+	      		<td align = center>
+					<input type = text name=ryear required pattern="^20[0-1][0-8]$">
+	      		</td>
+	      	</tr>
+	      	<tr>
+	      		<td align = center>
+					Месяц
+	      		</td>
+	      		<td align = center>
+					<input type = text name=rmonth required pattern="^[1-9]|1[0-2]$">
+	      		</td>
+	      	</tr>
+	      	<tr>
+	      		<td align = center>
+					<input type = reset value =Очистить>
+	      		</td>
+	      		<td align = center>
+					<input type = submit value =Отправить>
+	      		</td>
+	      	</tr>
+	      </table>
+	  </form>
+      <br><br>
+      <div>Подсказка: для поля <strong>Год</strong> используйте числа от <strong>2000 до 2018</strong>, <br>для поля <strong>Месяц</strong> от <strong>1 до 12</strong>* </div>
+		<img src="pero.gif" alt="Перо" style="vertical-align:middle"> 
+</body>
+</html>

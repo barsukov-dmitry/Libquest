@@ -1,0 +1,119 @@
+body {
+  overflow: hidden;
+  background: white;
+  margin: 0px;
+  padding: 0px;
+  background-img: url("img/камин.jpg");
+}
+
+.zone-wrap img{
+  //position: relative;
+  //z-index: -1;
+  text-align: center;
+  max-width: 375px;
+  max-height: 600px;
+}
+.zone-wrap {
+  padding: 80px;
+  overflow: hidden;
+  background: black;
+  filter: brightness(1.6) contrast(10);
+}
+.zone {
+  position: relative;
+  z-index: 2;
+  width: 50px;
+  height: 50px;
+  margin: 30px auto;
+  filter: blur(18px);
+}
+.magnets {
+  //background: #000000;
+  white-space: nowrap;
+}
+.magnets div {
+  position: absolute;
+  display: block;
+  width: 80px;
+  height: 30px;
+  border-radius: 30%;
+  background: transparent;
+}
+.magnets div:nth-child(1) {
+  top: 0;
+  box-shadow: 0 0 90px #ff9977;
+  animation: clockwise 3.14s linear infinite;
+}
+.magnets div:nth-child(2) {
+  top: 0;
+  left: -20px;
+  box-shadow: 0 0 70px #ff9977;
+  animation: counter-clockwise 4s linear infinite;
+}
+.magnets div:nth-child(3) {
+  top: 0;
+  left: 20px;
+  box-shadow: 0 0 70px #ff9977;
+  animation: clockwise 1.9s linear infinite;
+}
+.magnets div:nth-child(4) {
+  top: -15px;
+  box-shadow: 0 0 80px #ff9977;
+  animation: counter-clockwise 2.71s linear infinite;
+}
+.magnets div:nth-child(5) {
+  width: 10px;
+  height: 10px;
+  top: 20px;
+  left: -65px;
+  box-shadow: 0 0 50px #ff9977;
+  animation: counter-clockwise 3.71s linear infinite;
+}
+.magnets div:nth-child(6) {
+  width: 10px;
+  height: 10px;
+  top: 20px;
+  left: 65px;
+  box-shadow: 0 0 50px #ff9977;
+  animation: clockwise 4.71s linear infinite;
+}
+.sphere {
+  //background: #000000;
+  white-space: nowrap;
+}
+.sphere .core {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 153, 119, 0.6);
+  border-bottom: 15px solid #dddddd;
+}
+@keyframes clockwise {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  25% {
+    transform: translate(-40px, -40px);
+  }
+  50% {
+    transform: translate(0px, -80px);
+  }
+  75% {
+    transform: translate(40px, -40px);
+  }
+}
+@keyframes counter-clockwise {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  25% {
+    transform: translate(40px, -40px);
+  }
+  50% {
+    transform: translate(0px, -80px);
+  }
+  75% {
+    transform: translate(-40px, -40px);
+  }
+}

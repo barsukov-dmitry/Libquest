@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Форма ввода</title>
+	<link rel="stylesheet" href="forma.css">
+</head>
+<body align = center><br> <br><br> <br><br>
+	<h3>Введите ID партии для обновления количества<br>
+	и стоимости книг с одинаковым ID</h3>
+	<form method = GET action = "http://localhost/dimlib/procedure.php">
+		<table border = "2" bordercolor = brown align = center>
+	      	<tr>
+	      		<td align = center>
+					ID партии
+	      		</td>
+	      		<td align = center>
+					<input type = text name=Del_id required pattern="^[0-9]+$">
+	      		</td>
+	      	</tr>
+	      	<tr>
+	      		<td align = center>
+					<input type = reset value =Очистить>
+	      		</td>
+	      		<td align = center>
+					<input type = submit value =Отправить>
+	      		</td>
+	      	</tr>
+	      </table>
+	  </form>
+      <br><br>
+      <div>Подсказка: для ввода используйте натуральные числа* </div>
+	   <img src="pero.gif" alt="Перо" style="vertical-align:middle"> 
+</body>
+</html>
