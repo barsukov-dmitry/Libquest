@@ -1,6 +1,11 @@
 ﻿<?php
-    include "includes/u_dbconnect.php";
-
+    if (session_status() == PHP_SESSION_NONE)
+        session_start();
+    include "includes/dbconnect.php";
+   if (isset($_SESSION['db_login']))
+   {
+       include "includes/u_dbconnect.php";
+   }
     function no_roots()
     {
         $error_message = "У вас нет прав для совершения операции<br>";
@@ -35,7 +40,9 @@
         </div>
         <div class="content cl-effect-21">
         	 <div class="content_header">Выберите пункт меню для выполнения операции:</div>
-  				<div><a  <?php if($_SESSION['db_login'] != "analitic") no_roots(); else echo "href=\"selects/index1.php\""; ?> title="Ресурс доступен только для аналитика">
+  				<div><a  <?php if (!isset($_SESSION['db_login'])) no_roots();
+  				else { if($_SESSION['db_login'] != "analitic") no_roots();
+                    else echo "href=\"selects/index1.php\""; } ?> title="Ресурс доступен только для аналитика">
                     <i class="fa fa-book" aria-hidden="true"></i>
                     Отчет о поставках за указанный год и месяц по форме: код книги, цена экземпляра, общее количество экземпляров</a></div><br>
                 <div><a  <?php if($_SESSION['db_login'] != "analitic") no_roots(); else echo "href=\"selects/index2.php\""; ?> title="Ресурс доступен только для аналитика">
@@ -58,7 +65,7 @@
                     Процедура обновления количества и стоимости книг с одинаковым ID для конкретной партии книг</a></div><br>
                 <div><a  <?php if($_SESSION['db_login'] != "worker") no_roots(); else echo "href=\"main_scenary/index.php\""; ?> title="Ресурс доступен только для работника библиотеки">
                     <i class="fa fa-cogs" aria-hidden="true"></i>
-                    Выполнение главного сценария</a></div><br>
+                    Выполнение главного сценария "Выдача книги читателю"</a></div><br>
         </div>
         <div class="footer">Контактный телефон библиотеки: 8-926-438-05-91</div>
      </div>

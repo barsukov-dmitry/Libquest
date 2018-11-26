@@ -11,7 +11,6 @@
     {
         echo "Ошибка подключения БД";
         echo $e->getMessage();
-        include 'output.php';
         exit();
     }
 ?>
