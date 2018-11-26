@@ -13,6 +13,7 @@
 	$sql = "select Book_id, Copy_price, Copies_number from list join delivery using(Del_id) join book using(Book_id) where year(Del_date)='$d_year' and month(Del_date)='$d_month' group by(Book_id);";
 	$result = $pdo->query($sql);
 	$deliveries = $result->fetchAll();
+
 	$select_not_found = $result->rowcount();
     if($select_not_found == 0)
     {

@@ -1,5 +1,13 @@
 ﻿<?php
-    include "includes/u_dbconnect.php";
+    session_start();
+    if(!isset($_SESSION['db_password']))
+    {
+        include "includes/dbconnect.php";
+    }
+    if(isset($_SESSION['db_password']))
+    {
+        include "includes/u_dbconnect.php";
+    }
 
     function no_roots()
     {
@@ -56,7 +64,7 @@
                 <div><a  <?php if($_SESSION['db_login'] != "director") no_roots(); else echo "href=\"procedure/index.php\""; ?> title="Ресурс доступен только для директора">
                     <i class="fa fa-cogs" aria-hidden="true"></i>
                     Процедура обновления количества и стоимости книг с одинаковым ID для конкретной партии книг</a></div><br>
-                <div><a  <?php if($_SESSION['db_login'] != "worker") no_roots(); else echo "href=\"main_scenary/index.php\""; ?> title="Ресурс доступен только для работника библиотеки">
+                <div><a  <?php if($_SESSION['db_login'] != "worker") no_roots(); else echo "href=\"main_scenary/?Add\""; ?> title="Ресурс доступен только для работника библиотеки">
                     <i class="fa fa-cogs" aria-hidden="true"></i>
                     Выполнение главного сценария</a></div><br>
         </div>

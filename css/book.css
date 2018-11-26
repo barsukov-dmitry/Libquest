@@ -6,6 +6,22 @@ body {
     font-size: 16px;
     text-align: center;
 }
+.book_name {
+    margin-top: 30px;
+}
+
+.form {
+    background: red;
+    margin-top: 30px;
+}
+
+.book_name, .in_stock {
+    border-color: brown;
+    //background: red;
+    border-radius: 5px;
+    min-height: 30px;
+    min-width: 100px;
+}
 
 .error_header {
     padding-top: 50px;
