@@ -11,7 +11,7 @@ body {
 }
 
 .form {
-    background: red;
+    //background: red;
     margin-top: 30px;
 }
 
@@ -31,7 +31,8 @@ body {
 }
 .role {
     font-size: 16px;
-    margin-top: 5px;
+    margin-top: -23px;
+    margin-right: 200px;
 }
 
 .grid {
@@ -61,16 +62,25 @@ body {
     grid-column-end: 4;
     text-align: right;
     padding-right: 40px;
-    padding-top:12px;
+    padding-top: 12px;
     display: inline-block;
+    font-size: 18px;
 }
-
 .auth a {
+    color: black;
+}
+.auth a i{
     color: white;
 }
-.auth:hover a i{
+.auth a:hover i{
     transition: 0.3s;
     transform: scale(1.2);
+}
+.sig {
+    display: inline-block;
+    font-size: 16px;
+    font-family: 'Merriweather', serif;
+    text-shadow: #6f4336;
 }
 
 .logo {

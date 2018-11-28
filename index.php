@@ -1,14 +1,29 @@
 ﻿<?php
-    session_start();
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
     if(!isset($_SESSION['db_password']))
     {
         include "includes/dbconnect.php";
+        $_SESSION['db_password'] = 'virt';
+        $_SESSION['db_login'] = 'virt';
     }
     if(isset($_SESSION['db_password']))
     {
         include "includes/u_dbconnect.php";
     }
-
+    if(isset($_GET['Signout']))
+    {
+        include "includes/dbconnect.php";
+        $_SESSION['db_password'] = 'virt';
+        $_SESSION['db_login'] = 'virt';
+    }
+    if($_SESSION['db_password'] == "worker")
+    {
+        $sql = "SELECT * FROM basket";
+        $result = $pdo->query($sql);
+        $empty_basket = $result->rowcount();
+    }
     function no_roots()
     {
         $error_message = "У вас нет прав для совершения операции<br>";
@@ -36,9 +51,21 @@
             <div class = "logo">Библиотека Libquest</div>
             <div class = "auth">
                 <a href = "authorisation/index.php">
+                    <div class = "sig">Войти</div>
                     <i class="fa fa-user-circle" aria-hidden="true"></i>
-                    <div class = "role"><?php echo  $_SESSION['db_login'];?></div>
                 </a>
+                <a href ="?Signout">
+                    <div class = "sig">Выход</div>
+                    <i class="fa fa-key"></i>
+                </a>
+                    <div class = "role">
+                        <?php echo  $_SESSION['db_login'];?>
+                        <?php if($_SESSION['db_password'] == "worker"): ?>
+                        <a href = "/main_scenary/basket.php"><i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                        <?php echo  '(', $empty_basket, ')'; echo '</a>'; endif;?>
+                    </div>
+
+
             </div>
         </div>
         <div class="content cl-effect-21">

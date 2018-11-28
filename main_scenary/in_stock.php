@@ -14,7 +14,7 @@
     <table border = "2">
         <tr>
             <td style = "width: 120px;"><?php echo $Book_name; ?></td>
-            <td><input type = text name = number style="width: 40px;"></td>
+            <td><input type = number step="1" min="1" max= <?php echo $In_stock['In_stock'];?>  required pattern="^[1-9][0-9]*$" name = number style="width: 40px;"></td>
         </tr>
         <tr>
             <td colspan="2"> <?php

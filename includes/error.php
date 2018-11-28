@@ -17,26 +17,45 @@ if (session_status() == PHP_SESSION_NONE) {
 <body>
      <div class = "error_header"><?php echo $_SESSION['error_message']?></div>
      <?php if($_SESSION['error_message'] == "У вас нет прав для совершения операции<br>"): ?>
-            <form action = "../authorisation/index.php" style="text-align:center">
-                <button  class="b1">
-                    <img src="../img/bookk.png" style="vertical-align:middle" align = left>
-                    <H3>Авторизоваться</H3>
-                </button></p>
-            </form>
-        <?php else: ?>
+         <form action = "../authorisation/index.php" style="text-align:center">
+             <button  class="b1">
+                 <img src="../img/bookk.png" style="vertical-align:middle" align = left>
+                 <H3>Авторизоваться</H3>
+             </button>
+         </form>
+     <?php endif; ?>
+     <?php if($_SESSION['error_message'] == "Вы ничего не выбрали."): ?>
+             <a href = "../main_scenary/?Add"><button  class="b1">
+                 <img src="../img/bookk.png" style="vertical-align:middle" align = left>
+                 <H3>Продолжить выбор</H3>
+             </button></a>
+     <?php endif; ?>
+        <?php if($_SESSION['error_message'] != "У вас нет прав для совершения операции<br>" and $_SESSION['error_message'] !="Вы ничего не выбрали." and $_SESSION['error_message'] !="Указано неверное название книги" and $_SESSION['error_message'] != "Читателя с таким номером билета не существует" and $_SESSION['error_message'] != "Вы указали количество книг большее, чем сейчас находится в наличии"): ?>
              <form action = "?" style="text-align:center">
                 <button  class="b1">
                     <img src="../img/bookk.png" style="vertical-align:middle" align = left>
                     <H3>Ввести другие значения</H3>
-                </button></p>
+                </button>
             </form>
         <?php endif; ?>
     <br>
+     <?php if($_SESSION['error_message'] == "Указано неверное название книги"): ?>
+         <a href = "../main_scenary/?Add"><button  class="b1">
+                 <img src="../img/bookk.png" style="vertical-align:middle" align = left>
+                 <H3>Ввести другие значения</H3>
+             </button></a>
+     <?php endif; ?>
+     <?php if($_SESSION['error_message'] ==  "Читателя с таким номером билета не существует"): ?>
+         <a href = "../main_scenary/?Add"><button  class="b1">
+                 <img src="../img/bookk.png" style="vertical-align:middle" align = left>
+                 <H3>Ввести другие значения</H3>
+             </button></a>
+     <?php endif; ?>
     <form action ="../index.php">
         <button  class="b1">
             <img src="../img/bookk.png" style="vertical-align:middle" align = left>
             <H3>Вернуться  к  меню  библиотеки</H3>
-        </button></p>
+        </button>
     </form>
 </body>
 </html>

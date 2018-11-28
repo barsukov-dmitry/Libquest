@@ -1,7 +1,9 @@
 <?php
+    include $_SERVER['DOCUMENT_ROOT'] . '/includes/u_dbconnect.php';
     $sql = "SELECT * FROM basket";
     $result = $pdo->query($sql);
     $baskets = $result->fetchAll();
+    $empty_basket = $result->rowcount();
 ?>
 <!doctype html>
 <html lang="en">
@@ -16,7 +18,11 @@
 </head>
 <body>
     <br><br>
+        <?php if ($empty_basket == 0):?>
+            <div class = "error_header">Ваша корзина пуста</div>
+        <?php else: ?>
         <div class = "error_header">Товары в корзине</div>
+        <?php endif; ?>
         <?php foreach ($baskets as $basket):?>
         <form action = "" method = "GET">
             <div>
@@ -27,23 +33,25 @@
             </div>
         </form>
         <?php endforeach; ?><br><br>
-    <form action ="Order">
-        <button  class="b1">
+        <?php if ($empty_basket != 0):?>
+        <a href = "index.php?Order"><button  class="b1">
             <img src="../img/bookk.png" style="vertical-align:middle" align = left>
             <h3>Оформить заказ</h3>
-        </button></p>
-    </form>
-    <form action ="DeleteAll" method = "GET">
-        <button  class="b1">
+        </button></a>
+        <?php endif; ?>
+        <?php  if ($empty_basket != 0): ?>
+        <a href =  "index.php?DeleteAll"><button  class="b1">
             <img src="../img/bookk.png" style="vertical-align:middle" align = left>
             <h3>Очистить корзину</h3>
-        </button></p>
-    </form>
-    <form action ="../index.php">
-        <button  class="b1">
+        </button></a><br>
+        <?php endif; ?>
+        <a href = "index.php?Add"><button  class="b1">
             <img src="../img/bookk.png" style="vertical-align:middle" align = left>
-            <h3>Вернуться  к  меню  библиотеки</h3>
-        </button></p>
-    </form>
+            <h3>Продолжить выбор</h3>
+        </button></a>
+        <a href =  "../index.php"><button  class="b1">
+            <img src="../img/bookk.png" style="vertical-align:middle" align = left>
+            <h3>Вернуться к меню</h3>
+        </button></a>
 </body>
 </html>
